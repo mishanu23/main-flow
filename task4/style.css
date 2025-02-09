@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #f4f4f4;
+    --calc-bg: rgba(255, 255, 255, 0.9);
+    --btn-bg: rgba(0, 0, 0, 0.1);
+    --btn-hover: rgba(0, 0, 0, 0.2);
+    --operator-bg: #ff9800;
+    --equal-bg: #2ecc71;
+    --text-color: black;
+}
+
+.dark-mode {
+    --bg-color: #1e1e1e;
+    --calc-bg: rgba(30, 30, 30, 0.8);
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    --btn-hover: rgba(255, 255, 255, 0.2);
+    --operator-bg: #ff5722;
+    --equal-bg: #00e676;
+    --text-color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-color);
+    transition: background 0.3s ease-in-out;
+}
+
+.calculator {
+    width: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--calc-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    border-radius: 8px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: var(--operator-bg);
+}
+
+.equal {
+    background: var(--equal-bg);
+    grid-column: span 2;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 1.8rem;
+        height: 55px;
+        padding: 8px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        height: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    #display {
+        font-size: 1.5rem;
+        height: 50px;
+    }
+
+    button {
+        font-size: 1rem;
+        height: 45px;
+    }
+}
