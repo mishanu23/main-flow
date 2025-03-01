@@ -1,0 +1,18 @@
+.greeting-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
